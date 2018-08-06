@@ -1,0 +1,153 @@
+#game-display {
+	margin: 0 auto;
+	text-align: center;
+	width:1250px;
+}
+
+.rooms {
+	position: relative;
+	width: 80%;
+}
+
+#info-bar {
+	position: relative;
+	width: 20%;
+}
+
+#step-1 {
+	position: absolute;
+	top: 76%;
+	left: 19%;
+
+}
+
+#step-2 {
+	position: absolute;
+	top: 80%;
+	left: 19%;
+	color: gray;
+
+}
+
+#step-3 {
+	position: absolute;
+	top: 84%;
+	left: 19%;
+	color: gray;
+
+}
+
+#step-4 {
+	position: absolute;
+	top: 88%;
+	left: 19%;
+	color: gray;
+
+}
+
+.bg img {
+  width: 100%;
+  height: auto;
+}
+.round {
+    border-radius: 50%;
+}
+
+.round:hover {
+	border: 1px solid black;
+}
+
+.click-right {
+	position: absolute;
+  	top: 50%;
+  	left: 95%;
+}
+
+.click-left {
+	position: absolute;
+  	top: 50%;
+  	left: 1%;
+}
+
+#label-1 {
+	position: absolute;
+	top: 80%;
+	left: 15%;
+	
+}
+
+#shield-7 {
+	position: absolute;
+	top: 53%;
+	left: 34%;
+	
+}
+#shield-2 {
+	position: absolute;
+	top: 76%;
+	left: 40%;
+	
+}
+#shield-3 {
+	position: absolute;
+	top: 83%;
+	left: 49%;
+	
+}
+#shield-5 {
+	position: absolute;
+	top: 10%;
+	left: 77%;
+	
+}
+#shield-8 {
+	position: absolute;
+	top: 33%;
+	left: 31%;
+	
+}
+#greek-vase {
+	position: absolute;
+	top: 74%;
+	left: 29%;
+	
+}
+
+.icon-bar {
+
+	color:blue;
+}
+
+#vase {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 27%;
+	left: 55%;
+	z-index: 3;
+
+}
+
+#shield {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 27%;
+	left: 23%;
+	z-index: 3;
+
+}
+#label {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 38%;
+	left: 24%;
+	z-index: 3;
+
+}
+
+
+
+
+
