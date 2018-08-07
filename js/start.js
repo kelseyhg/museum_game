@@ -6,6 +6,7 @@ var collectableCount = 0;
 $(document).ready(function() {
 	console.log ("js is connected");
 
+	$("#basicExampleModal").modal("show");
 	$("#vase").hide();
 	$("#label").hide();
 	$("#shield").hide();
@@ -42,11 +43,15 @@ $(".collectable").on("click", function(){
 	var obj = collectables.find((o, i) => {
     if (o.name === this.id) {
     	console.log(collectables[i]);
-    	//alert(collectables[i].collectionText);
-    	//var iconId = "\"" + collectables[i].class + "\"";
-    	//console.log(iconId);
+    	$("#modal-text").text(collectables[i].collectionText);
+		$("#modal-title").text("Object Collected!");
+		var seeBook= $('<input id="modalButton" type="button" value="see guidebook"/>');
+		$("#modal-text").append(seeBook);
+		$("#basicExampleModal").modal("show");
+    	var iconId = "\"" + collectables[i].class + "\"";
+    	console.log(iconId);
     	//$(iconId).show();
-    	//$("#shield").show();
+    	$("#shield").show();
     	//document.getElementById(collectables[i].class).style.visibility = "visible";
     
     }
@@ -54,13 +59,17 @@ $(".collectable").on("click", function(){
 	});
 
 	if (collectableCount === totalCollectables) {
-		alert("Good job! You found all the dropped artifacts and labels.");
+		$("#modal-text").text("You found all the dropped artifacts and labels. Click on \"fix artifact\" when you're ready to move on.");
+		$("#modal-title").text("Good Job!");
+		$("#basicExampleModal").modal("show");
 		$("#step-1").css("color", "gray");
 		$("#step-2").css("color", "black");
 	};
 });
 
-
+$("#guidebook").on("click", function() {
+	$("#lightbox").modal("show");
+})
 
 
 var collectables = [
