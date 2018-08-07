@@ -151,6 +151,12 @@
 	
 }
 
+#note {
+	position: absolute;
+	top: 55%;
+	left: 35%;
+
+}
 .icon-bar {
 
 	color:blue;
@@ -189,7 +195,17 @@
 	margin-left: 340px;
 }
 
+#post-it {
+	margin-left: 100px;
+}
+
 .modal.and.carousel {
   position: fixed; // Needed because the carousel overrides the position property
+}
+
+
+
+.d-block {
+	margin: 0 auto!important;
 }
 

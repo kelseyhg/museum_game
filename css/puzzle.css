@@ -1,0 +1,82 @@
+#puzzle-board {
+	position: relative;
+	z-index: -1;
+}
+
+.puzzle-slots {
+	height: 150px;
+	width: 225px;
+	border: 2px solid black;
+	background-color: AliceBlue;
+	
+}
+
+#puzzle-container {
+	height: 650px;
+	width: 470px;
+}
+
+#slot-one {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+
+}
+
+#slot-two {
+	position: absolute;
+	top: 50px;
+	left: 275px;
+}
+
+#slot-three {
+	position: absolute;
+	top: 200px;
+	left: 50px;
+}
+
+#slot-four {
+	position: absolute;
+	top: 200px;
+	left: 275px;
+}
+
+#slot-five {
+	position: absolute;
+	top: 350px;
+	left: 50px;
+}
+
+#slot-six {
+	position: absolute;
+	top: 350px;
+	left: 275px;
+}
+
+#slot-seven {
+	position: absolute;
+	top: 500px;
+	left: 50px;
+}
+
+#slot-eight {
+	position: absolute;
+	top: 500px;
+	left: 275px;
+}
+
+#pieces-container {
+	position: absolute;
+	top: 50px;
+	left:500px;
+
+}
+
+.draggable {
+	position: inline-block;
+}
+
+
+
+
+
