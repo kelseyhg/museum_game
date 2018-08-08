@@ -1,5 +1,5 @@
 
-var totalCollectables = 10;
+var totalCollectables = 11;
 var collectableCount = 0;
 
 
@@ -109,6 +109,7 @@ var collectables = [
 	{name: "label-3", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"We'll need to match these labels with their artifacts later"},
 	{name: "label-4", class: "label", icon: "./img/label-icon.png", image: "./img/label-4.png", spread: 0, collectionText:"Another stray label"},
 	{name: "greek-vase", class: "greek-vase", icon: "./img/shield-icon.png", image: "./img/shield-1.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
+	{name: "helmet", class: "helmet", icon: "./img/helemt.png", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."}
 	
 ];
 

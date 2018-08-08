@@ -151,6 +151,12 @@
 	
 }
 
+#helmet {
+	position: absolute;
+	top: 13%;
+	left: 59%;
+}
+
 #note {
 	position: absolute;
 	top: 55%;
