@@ -114,12 +114,39 @@
 	
 }
 
-#shield-7 {
+#label-5 {
 	position: absolute;
-	top: 53%;
-	left: 34%;
+	top: 90%;
+	left: 11%;
 	
 }
+
+#label-6 {
+	position: absolute;
+	top: 69%;
+	left: 63%;
+	
+}
+
+#torc {
+	position: absolute;
+	top: 29%;
+	left: 9%;
+}
+
+#bog-body {
+	position: absolute;
+	top: 70%;
+	left: 70%;
+}
+
+#shield-1 {
+	position: absolute;
+	top: 86%;
+	left: 90%;
+	
+}
+
 #shield-2 {
 	position: absolute;
 	top: 76%;
@@ -132,12 +159,34 @@
 	left: 49%;
 	
 }
+
+#shield-4 {
+	position: absolute;
+	top: 71%;
+	left: 49%;
+	
+}
+
 #shield-5 {
 	position: absolute;
 	top: 10%;
 	left: 77%;
 	
 }
+
+#shield-6 {
+	position: absolute;
+	top: 80%;
+	left: 11%;
+	
+}
+
+#shield-7 {
+	position: absolute;
+	top: 53%;
+	left: 34%;
+}
+
 #shield-8 {
 	position: absolute;
 	top: 33%;
@@ -151,10 +200,30 @@
 	
 }
 
+#roman-coin {
+	position: absolute;
+	top: 3%;
+	left: 50%;
+	
+}
+
+#british-coin {
+	position: absolute;
+	top: 23%;
+	left: 38%;
+	
+}
+
 #helmet {
 	position: absolute;
-	top: 13%;
-	left: 59%;
+	top: 3%;
+	left: 65%;
+}
+
+#roman-helmet {
+	position: absolute;
+	top: 43%;
+	left: 16%;
 }
 
 #note {
