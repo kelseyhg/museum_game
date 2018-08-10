@@ -1,31 +1,29 @@
 
 var puzzleCount = 0;
 
-$("#step-2").on("click", function(){
+function partTwo() {
 	$("#roman-room").hide();
 	$("#celt-room").hide();
 	$("#greek-room").hide();
 	$("#solve-room").show();
 
 
-});
+};
 
  $( ".draggable" ).draggable({
-  snap: true,
-  snapTolerance: 40,
   revert: "invalid"
 });
 
 
 
- $( "#puzzle-1" ).draggable({ snap: "#slot-one", snapMode: "inner"});
- $( "#puzzle-2" ).draggable({ snap: "#slot-two", snapMode: "inner"});
- $( "#puzzle-3" ).draggable({ snap: "#slot-three", snapMode: "inner"});
- $( "#puzzle-4" ).draggable({ snap: "#slot-four", snapMode: "inner"});
- $( "#puzzle-5" ).draggable({ snap: "#slot-five", snapMode: "inner"});
- $( "#puzzle-6" ).draggable({ snap: "#slot-six", snapMode: "inner"});
- $( "#puzzle-7" ).draggable({ snap: "#slot-seven", snapMode: "inner"});
- $( "#puzzle-8" ).draggable({ snap: "#slot-eight", snapMode: "inner"});
+ $( "#puzzle-1" ).draggable();
+ $( "#puzzle-2" ).draggable();
+ $( "#puzzle-3" ).draggable();
+ $( "#puzzle-4" ).draggable();
+ $( "#puzzle-5" ).draggable();
+ $( "#puzzle-6" ).draggable();
+ $( "#puzzle-7" ).draggable();
+ $( "#puzzle-8" ).draggable();
 
 
 $(".puzzle-slots").droppable();
@@ -110,5 +108,8 @@ function checkCompletion() {
 	$("#basicExampleModal").modal("show");
 	$("#step-2").css("color", "gray");
 	$("#step-3").css("color", "black");
+  $("#step-3").on("click", function(){
+      partThree();
+    });
+	//change icon from shield piece to full shield
 }}
-//announce end of game when puzzle count === 8

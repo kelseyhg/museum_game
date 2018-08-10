@@ -70,6 +70,9 @@ $(".collectable").on("click", function(){
 		$("#basicExampleModal").modal("show");
 		$("#step-1").css("color", "gray");
 		$("#step-2").css("color", "black");
+		$("#step-2").on("click", function(){
+			partTwo();
+		});
 	};
 });
 

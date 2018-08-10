@@ -73,6 +73,7 @@
 
 .draggable {
 	position: inline-block;
+	vertical-align: top;
 }
 
 

@@ -1,9 +1,9 @@
-$("#step-3").on("click", function(){
+ function partThree(){
 	$("#solve-room").hide();
 	$("#celt-room-reassemble").show();
 	//add modal with instructions
 	
-});
+};
 var returnCount = 0;
 
 $( ".placeable" ).draggable({
@@ -18,7 +18,7 @@ $( "#bog-spot" ).droppable(
       returnCount ++; 
       $( "#bog-body-f" ).remove();
       $("#placed-bog").show();
-      //checkCompletion();
+      checkComplete();
       console.log(returnCount);
   	}}
 );
@@ -27,7 +27,7 @@ $( "#torc-spot" ).droppable(
       returnCount ++; 
       $( "#torc-f" ).remove();
       $("#placed-torc").show();
-      //checkCompletion();
+      checkComplete();
        console.log(returnCount);
   }}
 );
@@ -36,7 +36,7 @@ $( "#helmet-spot" ).droppable(
       returnCount ++;
      $( "#helmet-f" ).remove();
      $("#placed-helmet").show();
-      //checkCompletion(); 
+      checkComplete(); 
        console.log(returnCount);
   }}
 );
@@ -45,80 +45,98 @@ $( "#brit-coin-spot" ).droppable(
       returnCount ++; 
      $("#british-coin-f").remove();
      $("#placed-british-coin").show();
-  	  //checkCompletion();
+  	  checkComplete();
   	   console.log(returnCount);
 	}}
 );
 $( "#rome-coin-spot" ).droppable(
    { accept: "#roman-coin-f", drop:function(event,ui){
       returnCount ++;
-    $( "#roman-coin-f").remove();
-    $("#placed-roman-coin").show();
-     // checkCompletion();
+    	$( "#roman-coin-f").remove();
+    	$("#placed-roman-coin").show();
+     	checkComplete();
       console.log(returnCount);
     }}
 );
 $( "#shield-spot" ).droppable(
    { accept: "#shield-f", drop:function(event,ui){
       returnCount ++; 
-     $( "#shield-f" ).remove();
-      $("#placed-shield").show();
-      //checkCompletion();
+     	$( "#shield-f" ).remove();
+      	$("#placed-shield").show();
+      	checkComplete();
       console.log(returnCount);
   	}}
 );
 $( "#bog-label-spot" ).droppable(
    { accept: "#bog-body-label", drop:function(event,ui){
       returnCount ++; 
-      $( "#bog-body-label" ).remove();
-      $("#placed-bog-label").show();
-      //checkCompletion();
+      	$( "#bog-body-label" ).remove();
+      	$("#placed-bog-label").show();
+      	checkComplete();
       console.log(returnCount);
   	}}
 );
 $( "#torc-label-spot" ).droppable(
    { accept: "#torc-label", drop:function(event,ui){
       returnCount ++;
-       $( "#torc-label" ).remove();
-     $("#placed-torc-label").show();
-      checkCompletion();
+       	$( "#torc-label" ).remove();
+     	$("#placed-torc-label").show();
+      	checkComplete();
        console.log(returnCount);
     }}
 );
 $( "#helmet-label-spot" ).droppable(
    { accept: "#helmet-label", drop:function(event,ui){
       returnCount ++;
-       $( "#helmet-label" ).remove();
-      $("#placed-helmet-label").show();
-      //checkCompletion();
+       	$( "#helmet-label" ).remove();
+      	$("#placed-helmet-label").show();
+      	checkComplete();
        console.log(returnCount);
     }}
 );
 $( "#brit-coin-label-spot" ).droppable(
    { accept: "#british-coin-label", drop:function(event,ui){
       returnCount ++;
-       $( "#british-coin-label" ).remove();
-     $("#placed-british-coin-label").show();
-     // checkCompletion();
+        $( "#british-coin-label" ).remove();
+     	$("#placed-british-coin-label").show();
+     	checkComplete();
        console.log(returnCount);
     }}
 );
 $( "#rome-coin-label-spot" ).droppable(
    { accept: "#roman-coin-label", drop:function(event,ui){
       returnCount ++;
-       $( "#roman-coin-label" ).remove();
-  		 $("#placed-roman-coin-label").show();
-      //checkCompletion();
+        $( "#roman-coin-label" ).remove();
+  		$("#placed-roman-coin-label").show();
+        checkComplete();
        console.log(returnCount);
     }}
 );
 $( "#shield-label-spot" ).droppable(
    { accept: "#shield-label", drop:function(event,ui){
       returnCount ++;
-       $( "#shield-label" ).remove();
-     $("#placed-shield-label").show();
-      //checkCompletion();
+       	$( "#shield-label" ).remove();
+     	$("#placed-shield-label").show();
+      	checkComplete();
        console.log(returnCount);
     }}
 );
 
+var $artifactGroup = $('#artifactGroup');
+$artifactGroup.on('show.bs.collapse','.collapse', function() {
+$artifactGroup.find('.collapse.show').collapse('hide');
+});
+
+function checkComplete() {
+	if (returnCount === 12) {
+	$("#modal-text").text("You've put everything back in the right place! But something is still missing. Click on \"find the hidden hoard\" to start the hunt for the last missing item.");
+	$("#modal-title").text("Good Job!");
+	$("#basicExampleModal").modal("show");
+	$("#step-3").css("color", "gray");
+	$("#step-4").css("color", "black");
+  $("#step-4").on("click", function(){
+      partFour();
+    });
+
+
+	}}

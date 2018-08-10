@@ -202,8 +202,9 @@
 
 #roman-coin {
 	position: absolute;
-	top: 3%;
-	left: 50%;
+	top: 21%;
+	left: 82%;
+	width: 30px;
 	
 }
 
@@ -211,6 +212,7 @@
 	position: absolute;
 	top: 23%;
 	left: 38%;
+	width: 30px;
 	
 }
 

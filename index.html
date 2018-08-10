@@ -9,6 +9,7 @@
  <link rel="stylesheet" href="./css/style.css"> 
  <link rel="stylesheet" href="./css/puzzle.css"> 
  <link rel="stylesheet" href="./css/part-three.css"> 
+ <link rel="stylesheet" href="./css/game-end.css"> 
 
 </head>
 <body>
@@ -16,7 +17,7 @@
 	<div id ="game-display">
 		<!-- Opening Room -->
 		<div class ="rooms col-xs-8 float-left" id=celt-room>
-			<img  class="bg" src="./img/celtic_exhibit_flat.png">
+			<img id = "celt-bg" class="bg" src="./img/celtic_exhibit_flat.png">
 			
 			<img id ="label-1" class ="collectable" src="./img/label-1.png">
 			<img id ="shield-7" class ="collectable" src="./img/shield-7.png">
@@ -97,28 +98,35 @@
 			<img id ="placed-torc-label" class ="hidden" src="./img/general-label.png">
 			<img id ="placed-british-coin-label" class ="hidden" src="./img/general-label.png">
 			<img id ="placed-roman-coin-label" class ="hidden" src="./img/general-label.png">
+		
+		<!-- Artifacts and labels to be dragged into correct position-->
+		<div id ="artifactGroup">
 			<div id = "buttons">
-				<a class="btn" type="button" data-toggle="collapse" href="#artifact-holder">View Artifacts</a>
-  				<a class="btn" type="button" data-toggle="collapse" data-target="#label-holder">View Artifact Labels</a>
-  			</div>
-			<div id="artifact-holder" class="collapse multi-collapse">
-				<img id ="shield-f" class ="placeable" src="./img/shield.png">
-				<img id ="helmet-f" class ="placeable" src="./img/waterloo-helmet.png">
-				<img id ="roman-helmet-f" class ="placeable" src="./img/roman-helmet-placeholder.png">
-				<img id ="greek-vase-f" class ="placeable" src="./img/greek-vase.png">
-				<img id ="torc-f" class ="placeable" src="./img/torc-whole.png">
-				<img id ="bog-body-f" class ="placeable" src="./img/bog.png">
-				<img id ="british-coin-f" class ="placeable" src="./img/british-coin.png">
-				<img id ="roman-coin-f" class ="placeable" src="./img/roman-coin.png">
-			</div>
-			<div id="label-holder" class="collapse multi-collapse">
-				<img id ="bog-body-label" class ="placeable labels" src="./img/bog-label.png">
-				<img id ="british-coin-label" class ="placeable labels" src="./img/british-coin-label.png">
-				<img id ="helmet-label" class ="placeable labels" src="./img/helmet-label.png">
-				<img id ="torc-label" class ="placeable labels" src="./img/torc-label.png">
-				<img id ="shield-label" class ="placeable labels" src="./img/shield-label.png">
-				<img id ="roman-coin-label" class ="placeable labels" src="./img/roman-coin-label.png">
-			</div>
+					<a class="btn" type="button" data-toggle="collapse" data-target="#artifact-holder">View Artifacts</a>
+	  				<a class="btn" type="button" data-toggle="collapse" data-target="#label-holder">View Artifact Labels</a>
+	  		</div>
+			<div class="accordion-group">
+				<div id="artifact-holder" class="collapse">
+					<img id ="shield-f" class ="placeable" src="./img/shield.png">
+					<img id ="helmet-f" class ="placeable" src="./img/waterloo-helmet.png">
+					<img id ="roman-helmet-f" class ="placeable" src="./img/roman-helmet-placeholder.png">
+					<img id ="greek-vase-f" class ="placeable" src="./img/greek-vase.png">
+					<img id ="torc-f" class ="placeable" src="./img/torc-whole.png">
+					<img id ="bog-body-f" class ="placeable" src="./img/bog.png">
+					<img id ="british-coin-f" class ="placeable" src="./img/british-coin.png">
+					<img id ="roman-coin-f" class ="placeable" src="./img/roman-coin.png">
+				</div>
+				<div id="label-holder" class="collapse">
+					<img id ="bog-body-label" class ="placeable labels" src="./img/bog-label.png">
+					<img id ="british-coin-label" class ="placeable labels" src="./img/british-coin-label.png">
+					<img id ="helmet-label" class ="placeable labels" src="./img/helmet-label.png">
+					<img id ="torc-label" class ="placeable labels" src="./img/torc-label.png">
+					<img id ="shield-label" class ="placeable labels" src="./img/shield-label.png">
+					<img id ="roman-coin-label" class ="placeable labels" src="./img/roman-coin-label.png">
+				</div>
+			</div> 
+		</div>
+
 			<div id="bog-label-spot" class="droppable"></div>
 			<div id="bog-spot" class="droppable"></div>
 			<div id="torc-label-spot" class="droppable"></div>
@@ -151,7 +159,7 @@
 	</div>
 	<!-- All-purpose modal for all notices-->
 <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" id="main-modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modal-title">A Break-in at the Museum!</h5>
@@ -163,13 +171,15 @@
 		<p>Some dastardly ne’er-do-well has trashed our display on Iron Age Britain, and several artifacts have been misplaced or damaged. The would-be thief was interrupted before he could take anything, but we believe he hid some artifacts in the museum itself for an accomplice to recover later.</p>
 
 		<p>Can you help put our exhibit back together and track down the hidden loot before it’s carted away?</p>
+
+		<p>Reference the blue guidebook to learn about the artifacts if you need help.</p>
       </div>
     </div>
   </div>
 </div>
 <!-- Modal to display guidebook -->
 <div class="modal fade bd-example-modal-lg" id="lightbox" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
- <div class="modal-dialog modal-lg" role="document">
+ <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
   <div class="modal-content">
    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-interval=false data-ride="">
     <ol class="carousel-indicators">
@@ -205,6 +215,27 @@
  </div>
 </div>
 
+<!-- Win/lose modal requires user to interact with modal, not click out -->
+<div class="modal fade" id="winLoseModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="main-modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="end-modal-title">You did it!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="end-modal-text" class="modal-body">
+		<p>The museum is saved!</p>
+		<p>You remembered that the Celts believed water held the spirit realm and left their offerings and sacrifices in watery places. Of course our thief left his hoard in the water cooler!</p>
+      </div>
+       <div class="modal-footer">
+        <button type="button" id ="restart" class="btn btn-default" data-dismiss="modal">Restart Game</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> 
@@ -215,7 +246,7 @@
   <script src="./js/start.js" type="text/javascript"></script>
   <script src="./js/phase-two.js" type="text/javascript"></script>
    <script src="./js/phase-three.js" type="text/javascript"></script>
- 
+ <script src="./js/game-end.js" type="text/javascript"></script>
 
 
 </body>
