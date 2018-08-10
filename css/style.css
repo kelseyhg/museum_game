@@ -216,7 +216,7 @@
 	
 }
 
-#helmet {
+#viking-helmet {
 	position: absolute;
 	top: 3%;
 	left: 65%;
@@ -266,6 +266,52 @@
 	left: 24%;
 	
 }
+
+#helmet {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 38%;
+	left: 55%;
+	
+}
+
+#coin {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 49%;
+	left: 24%;
+	
+}
+
+#a-torc {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 49%;
+	left: 55%;
+	
+}
+
+#bog {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 60%;
+	left: 24%;
+	
+}
+
+#note {
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 60%;
+	left: 55%;
+	
+}
+
 
 #modalButton {
 	display: block;

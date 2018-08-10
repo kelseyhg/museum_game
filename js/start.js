@@ -7,9 +7,9 @@ $(document).ready(function() {
 	console.log ("js is connected");
 
 	$("#basicExampleModal").modal("show");
-	$("#vase").hide();
-	$("#label").hide();
-	$("#shield").hide();
+	//$("#vase").hide();
+	//$("#label").hide();
+	//$("#shield").hide();
 	$("#solve-room").hide();
 	$("#greek-room").hide();
 	$("#roman-room").hide();
@@ -119,11 +119,11 @@ var collectables = [
 	{name: "label-6", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"Another label for the display."},
 	{name: "roman-coin", class: "coin", icon: "./img/coin-icon.png", image: "./img/roman-coin.png", spread: 3, collectionText:"Is that a Roman emperor?"},
 	{name: "british-coin", class: "coin", icon: "./img/coin-icon.png", image: "./img/british-coin.png", spread: 3, collectionText:"Think you can buy an ice cream with that?"},
-	{name: "greek-vase", class: "greek-vase", icon: "./img/shield-icon.png", image: "./img/shield-1.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
-	{name: "helmet", class: "helmet", icon: "./img/helmet.png", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."},
-	{name: "roman-helmet", class: "roman-helmet", icon: "./img/helmet.png", image: "./img/roman-helmet-placeholder.png", spread: 3, collectionText:"Are we getting ready for battle?"},
-	{name: "torc", class: "torc", icon: "./img/torc.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy!"},
-	{name: "bog-body", class: "bog", icon: "./img/corpse.png", image: "./img/bog.png", spread: 2, collectionText:"Somebody left behind a leather jacket with a head attached."}
+	{name: "greek-vase", class: "vase", icon: "./img/greek-vase-icon.png", image: "./img/shield-1.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
+	{name: "viking-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."},
+	{name: "roman-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/roman-helmet-placeholder.png", spread: 3, collectionText:"Are we getting ready for battle?"},
+	{name: "a-torc", class: "torc", icon: "./img/torc-icon.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy!"},
+	{name: "bog-body", class: "bog", icon: "./img/bog-icon.png", image: "./img/bog.png", spread: 2, collectionText:"Somebody left behind a leather jacket with a head attached."}
 	
 ];
 
