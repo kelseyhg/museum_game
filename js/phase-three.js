@@ -18,6 +18,7 @@ $( "#bog-spot" ).droppable(
       returnCount ++; 
       $( "#bog-body-f" ).remove();
       $("#placed-bog").show();
+      $("#bog").hide();
       checkComplete();
       console.log(returnCount);
   	}}
@@ -27,6 +28,7 @@ $( "#torc-spot" ).droppable(
       returnCount ++; 
       $( "#torc-f" ).remove();
       $("#placed-torc").show();
+      $("#a-torc").hide();
       checkComplete();
        console.log(returnCount);
   }}
@@ -36,6 +38,7 @@ $( "#helmet-spot" ).droppable(
       returnCount ++;
      $( "#helmet-f" ).remove();
      $("#placed-helmet").show();
+     $("#helmet").hide();
       checkComplete(); 
        console.log(returnCount);
   }}
@@ -45,6 +48,7 @@ $( "#brit-coin-spot" ).droppable(
       returnCount ++; 
      $("#british-coin-f").remove();
      $("#placed-british-coin").show();
+     $("#coin").hide();
   	  checkComplete();
   	   console.log(returnCount);
 	}}
@@ -63,6 +67,7 @@ $( "#shield-spot" ).droppable(
       returnCount ++; 
      	$( "#shield-f" ).remove();
       	$("#placed-shield").show();
+        $("#shield").hide();
       	checkComplete();
       console.log(returnCount);
   	}}
@@ -129,6 +134,7 @@ $artifactGroup.find('.collapse.show').collapse('hide');
 
 function checkComplete() {
 	if (returnCount === 12) {
+  $("#label").hide();  
 	$("#modal-text").text("You've put everything back in the right place! But something is still missing. Click on \"find the hidden hoard\" to start the hunt for the last missing item.");
 	$("#modal-title").text("Good Job!");
 	$("#basicExampleModal").modal("show");

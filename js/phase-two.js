@@ -106,6 +106,7 @@ function checkCompletion() {
 	$("#modal-text").text("You've repaired the shield! Click on \"return artifacts\" for the next task.");
 	$("#modal-title").text("Good Job!");
 	$("#basicExampleModal").modal("show");
+  $("#shield").attr("src", "./img/shield-whole-icon.png");
 	$("#step-2").css("color", "gray");
 	$("#step-3").css("color", "black");
   $("#step-3").on("click", function(){

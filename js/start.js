@@ -7,9 +7,7 @@ $(document).ready(function() {
 	console.log ("js is connected");
 
 	$("#basicExampleModal").modal("show");
-	//$("#vase").hide();
-	//$("#label").hide();
-	//$("#shield").hide();
+	$(".icons").hide();
 	$("#solve-room").hide();
 	$("#greek-room").hide();
 	$("#roman-room").hide();
@@ -17,6 +15,8 @@ $(document).ready(function() {
 	$(".hidden").hide();
 
 });
+
+//moving between rooms
 
 $('.greek').on('click', function(){
 	$("#roman-room").hide();
@@ -39,6 +39,7 @@ $('.celt').on('click', function(){
 
 });
 
+//controls the object collection process
 $(".collectable").on("click", function(){
 	this.remove();
 	console.log(this.id);
@@ -54,11 +55,8 @@ $(".collectable").on("click", function(){
 		$("#modalButton").on("click", function(){
 			openBook(i);
 		})
-    	var iconId = "\"" + collectables[i].class + "\"";
-    	console.log(iconId);
-    	//$(iconId).show();
-    	$("#shield").show();
-    	//document.getElementById(collectables[i].class).style.visibility = "visible";
+    	var iconId = "#" + collectables[i].class;
+    	$(iconId).show();
     
     }
 
@@ -85,6 +83,7 @@ $("#note").on("click", function(){
 	console.log(postIt);
 	$("#modal-text").append(postIt);
 	$("#basicExampleModal").modal("show");
+	$("#note").show();
 
 });
 
@@ -122,7 +121,7 @@ var collectables = [
 	{name: "greek-vase", class: "vase", icon: "./img/greek-vase-icon.png", image: "./img/shield-1.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
 	{name: "viking-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."},
 	{name: "roman-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/roman-helmet-placeholder.png", spread: 3, collectionText:"Are we getting ready for battle?"},
-	{name: "a-torc", class: "torc", icon: "./img/torc-icon.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy!"},
+	{name: "torc", class: "a-torc", icon: "./img/torc-icon.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy!"},
 	{name: "bog-body", class: "bog", icon: "./img/bog-icon.png", image: "./img/bog.png", spread: 2, collectionText:"Somebody left behind a leather jacket with a head attached."}
 	
 ];
