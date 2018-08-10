@@ -57,10 +57,10 @@ $(".collectable").on("click", function(){
 		})
     	var iconId = "#" + collectables[i].class;
     	$(iconId).show();
-    
     }
 
 	});
+
 	// Move to task 2
 	if (collectableCount === totalCollectables) {
 		$("#modal-text").text("You found all the dropped artifacts and labels. Click on \"fix artifact\" when you're ready to move on.");

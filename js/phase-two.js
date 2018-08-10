@@ -1,4 +1,16 @@
 
+var shieldPieces = [
+  {slot: "#slot-one", piece: "#puzzle-1", url: "url('./img/puzzle-1.png')"},
+  {slot: "#slot-two", piece: "#puzzle-2", url: "url('./img/puzzle-2.png')"},
+  {slot: "#slot-three", piece: "#puzzle-3", url: "url('./img/puzzle-3.png')"},
+  {slot: "#slot-four", piece: "#puzzle-4", url: "url('./img/puzzle-4.png')"},
+  {slot: "#slot-five", piece: "#puzzle-5", url: "url('./img/puzzle-5.png')"},
+  {slot: "#slot-six", piece: "#puzzle-6", url: "url('./img/puzzle-6.png')"},
+  {slot: "#slot-seven", piece: "#puzzle-7", url: "url('./img/puzzle-7.png')"},
+  {slot: "#slot-eight", piece: "#puzzle-8", url: "url('./img/puzzle-8.png')"}
+]
+
+
 var puzzleCount = 0;
 
 function partTwo() {
@@ -7,99 +19,34 @@ function partTwo() {
 	$("#greek-room").hide();
 	$("#solve-room").show();
 
-
 };
 
  $( ".draggable" ).draggable({
   revert: "invalid"
 });
 
-
-
- $( "#puzzle-1" ).draggable();
- $( "#puzzle-2" ).draggable();
- $( "#puzzle-3" ).draggable();
- $( "#puzzle-4" ).draggable();
- $( "#puzzle-5" ).draggable();
- $( "#puzzle-6" ).draggable();
- $( "#puzzle-7" ).draggable();
- $( "#puzzle-8" ).draggable();
-
-
 $(".puzzle-slots").droppable();
 
-$( "#slot-one" ).droppable(
-   { accept: "#puzzle-1", drop:function(event,ui){
-      puzzleCount ++; 
-      $( "#puzzle-1" ).remove();
-      $("#slot-one").css("background-image", "url('./img/puzzle-1.png')");
-      checkCompletion();
-      console.log(puzzleCount);
-  	}}
-);
-$( "#slot-two" ).droppable(
-   { accept: "#puzzle-2", drop:function(event,ui){
-      puzzleCount ++; 
-      $( "#puzzle-2" ).remove();
-      $("#slot-two").css("background-image", "url('./img/puzzle-2.png')");
-      checkCompletion();
-       console.log(puzzleCount);
-  }}
-);
-$( "#slot-three" ).droppable(
-   { accept: "#puzzle-3", drop:function(event,ui){
+
+for (var i = 0; i < shieldPieces.length; i++) {
+  $(shieldPieces[i].slot).droppable(
+   { accept: shieldPieces[i].piece, drop:function(event,ui){
       puzzleCount ++;
-      $( "#puzzle-3" ).remove();
-      $("#slot-three").css("background-image", "url('./img/puzzle-3.png')");
-      checkCompletion(); 
-       console.log(puzzleCount);
-  }}
-);
-$( "#slot-four" ).droppable(
-   { accept: "#puzzle-4", drop:function(event,ui){
-      puzzleCount ++; 
-      $( "#puzzle-4" ).remove();
-      $("#slot-four").css("background-image", "url('./img/puzzle-4.png')");
-  	  checkCompletion();
-  	   console.log(puzzleCount);
-	}}
-);
-$( "#slot-five" ).droppable(
-   { accept: "#puzzle-5", drop:function(event,ui){
-      puzzleCount ++;
-       $( "#puzzle-5" ).remove();
-      $("#slot-five").css("background-image", "url('./img/puzzle-5.png')");
-      checkCompletion();
-      console.log(puzzleCount);
-    }}
-);
-$( "#slot-six" ).droppable(
-   { accept: "#puzzle-6", drop:function(event,ui){
-      puzzleCount ++; 
-      $( "#puzzle-6" ).remove();
-      $("#slot-six").css("background-image", "url('./img/puzzle-6.png')");
-      checkCompletion();
-      console.log(puzzleCount);
-  	}}
-);
-$( "#slot-seven" ).droppable(
-   { accept: "#puzzle-7", drop:function(event,ui){
-      puzzleCount ++; 
-      $( "#puzzle-7" ).remove();
-      $("#slot-seven").css("background-image", "url('./img/puzzle-7.png')");
-      checkCompletion();
-      console.log(puzzleCount);
-  	}}
-);
-$( "#slot-eight" ).droppable(
-   { accept: "#puzzle-8", drop:function(event,ui){
-      puzzleCount ++;
-       $( "#puzzle-8" ).remove();
-      $("#slot-eight").css("background-image", "url('./img/puzzle-8.png')");
-      checkCompletion();
-       console.log(puzzleCount);
-    }}
-);
+      for (var j = 0; j < shieldPieces.length; j++) {
+        var activeDiv = ("#" + this.id);
+        if (activeDiv ===  shieldPieces[j].slot) {
+          console.log("#" + this.id);
+          $(shieldPieces[j].piece).remove();
+          $(activeDiv).css("background-image", shieldPieces[j].url);
+          
+        };
+      };
+
+      console.log('this:', this)
+        checkCompletion();
+    }});
+
+}
 
 function checkCompletion() {
 	if (puzzleCount === 8) {
