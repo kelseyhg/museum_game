@@ -17,7 +17,9 @@
  function partThree(){
   $("#solve-room").hide();
   $("#celt-room-reassemble").show();
-  //add modal with instructions ?
+  $("#modal-text").text("Click the boxes in the top left to reveal the artifacts and their labels, then drag them to the correct places in the display. Use the guidebook for hints.");
+  $("#modal-title").text("Let's reassemble");
+  $("#basicExampleModal").modal("show");
   
 };
 var returnCount = 0;
