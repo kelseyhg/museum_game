@@ -14,16 +14,16 @@
     {name: "romeCoinLabel", spot: "#rome-coin-label-spot", thing: "#roman-coin-label", placed: "#placed-roman-coin-label", icon: "#label"}
   ]  
 
+var returnCount = 0;
+
  function partThree(){
   $("#solve-room").hide();
   $("#celt-room-reassemble").show();
   $("#modal-text").text("Click the boxes in the top left to reveal the artifacts and their labels, then drag them to the correct places in the display. Use the guidebook for hints.");
   $("#modal-title").text("Let's reassemble");
   $("#basicExampleModal").modal("show");
-  
+  $("#dialog").text("Use the guidebook if you need help placing the artifacts and their labels!");
 };
-var returnCount = 0;
-var coinCount = 0;
 
 $( ".placeable" ).draggable({
   revert: "invalid"
@@ -34,6 +34,18 @@ for (var i = 0; i < myObjects.length; i++) {
   $(myObjects[i].spot).droppable(
    { accept: myObjects[i].thing, drop:function(event,ui){
       returnCount ++;
+        if (returnCount === 3) {
+          $("#dialog").text("I don't think all the items we collected belong in this display.");
+        }
+        else if (returnCount === 5) {
+          $("#dialog").text("Pretty sure we haven't found that missing hoard yet!");
+        }
+         else if (returnCount === 6) {
+          $("#dialog").text("Don't worry about the shield and vase. Someone will take them back later!");
+        }
+       else if (returnCount === 7) {
+        $("#dialog").text("It's okay to guess where the labels go, but the guidebook might have some helpful hints.");
+       }
       for (var j = 0; j < myObjects.length; j++) {
         if (("#" + this.id) ===  myObjects[j].spot) {
           console.log("#" + this.id)

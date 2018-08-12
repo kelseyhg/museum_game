@@ -2,7 +2,6 @@
 var guessCounter = 0;
 
  function partFour(){
-	//replace celt background with filled-in image
 	$("#celt-room-reassemble").hide();
 	$("#celt-bg").attr("src", "./img/celtic_exhibit_complete.png");
 	var hoardSpot = "<div id=\"hidden-hoard\"></div>"; 
@@ -13,6 +12,7 @@ var guessCounter = 0;
 	var postIt = ("<img id=\"post-it\" src=\"./img/note.png\">");
 	$("#modal-text").append(postIt);
 	$("#basicExampleModal").modal("show");
+	$("#dialog").text("You only have three guesses, so think carefully! Check the guidebook for more on Celtic beliefs.");
 	hunt();
 };
 

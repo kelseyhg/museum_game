@@ -1,4 +1,8 @@
 
+.item-show {
+	border: 1px solid red;
+}
+
 #artifact-holder {
 	width: 1000px;
 	height: 250px;

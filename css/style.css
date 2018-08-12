@@ -7,11 +7,13 @@
 .rooms {
 	position: relative;
 	width: 80%;
+	margin-left: -15px;
 }
 
 #info-bar {
 	position: relative;
 	width: 20%;
+	float: left;
 }
 
 #guidebook {
@@ -19,6 +21,14 @@
 	top: 4%;
 	left: 33%;
 
+}
+
+#dialog {
+	position: absolute;
+	top: 28%;
+	left: 19%;
+	width: 160px;
+	font-size: 20px;
 }
 
 #step-1 {
@@ -235,9 +245,11 @@
 
 }
 
-#modalButton {
+#guideButton {
 	display: block;
-	margin-left: 340px;
+	margin-top: 50px;
+	margin-left: 10px;
+	text-align: center;
 }
 
 #post-it {

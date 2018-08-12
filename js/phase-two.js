@@ -18,6 +18,9 @@ function partTwo() {
 	$("#celt-room").hide();
 	$("#greek-room").hide();
 	$("#solve-room").show();
+  $("#modal-text").text("Drag and drop the pieces into the correct positions to repair the artifact.");
+  $("#modal-title").text("Shield Repair 101");
+  $("#basicExampleModal").modal("show");
 
 };
 

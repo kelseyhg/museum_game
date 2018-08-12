@@ -7,7 +7,6 @@ $(document).ready(function() {
 	console.log ("js is connected");
 
 	$("#basicExampleModal").modal("show");
-	$(".icons").hide();
 	$("#solve-room").hide();
 	$("#greek-room").hide();
 	$("#roman-room").hide();
@@ -47,22 +46,20 @@ $(".collectable").on("click", function(){
 	var obj = collectables.find((o, i) => {
     if (o.name === this.id) {
     	console.log(collectables[i]);
-    	$("#modal-text").text(collectables[i].collectionText);
-		$("#modal-title").text("Object Collected!");
-		var seeBook= $('<input id="modalButton" type="button" value="see guidebook"/>');
-		$("#modal-text").append(seeBook);
-		$("#basicExampleModal").modal("show");
-		$("#modalButton").on("click", function(){
+    	$("#dialog").text(collectables[i].collectionText);
+		var seeBook= $('<input id="guideButton" type="button" value="see guidebook"/>');
+		$("#dialog").append(seeBook);
+		$("#guideButton").on("click", function(){
 			openBook(i);
 		})
-    	var iconId = "#" + collectables[i].class;
-    	$(iconId).show();
+    	//var iconId = "#" + collectables[i].class;
     }
 
 	});
 
 	// Move to task 2
 	if (collectableCount === totalCollectables) {
+		$("#dialog").text("");
 		$("#modal-text").text("You found all the dropped artifacts and labels. Click on \"fix artifact\" when you're ready to move on.");
 		$("#modal-title").text("Good Job!");
 		$("#basicExampleModal").modal("show");
@@ -80,10 +77,10 @@ $("#note").on("click", function(){
 	$("#modal-text").text("Looks like a note from the mastermind to his thief!");
 	$("#modal-title").text("Note Collected!");
 	var postIt = ("<img id=\"post-it\" src=\"./img/note.png\">");
-	console.log(postIt);
 	$("#modal-text").append(postIt);
 	$("#basicExampleModal").modal("show");
-	$("#note").show();
+	$("#dialog").text("We\'ll need that note later to find what's missing.");
+
 
 });
 
@@ -103,7 +100,7 @@ function openBook(page){
 
 var collectables = [
 	{name: "shield-1", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-1.png", spread: 1, collectionText:"Looks like a piece of...something."},
-	{name: "shield-2", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-2.png", spread: 1, collectionText:"Shiny."},
+	{name: "shield-2", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-2.png", spread: 1, collectionText:"Shiny. is that bronze?"},
 	{name: "shield-3", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-3.png", spread: 1, collectionText:"We'll have to put this back together when we find all the pieces."},
 	{name: "shield-4", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-4.png", spread: 1, collectionText:"This does NOT belong here."},
 	{name: "shield-5", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-5.png", spread: 1, collectionText:"Don't cut yourself on those jagged edges!"},
@@ -112,7 +109,7 @@ var collectables = [
 	{name: "shield-8", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-8.png", spread: 1, collectionText:"Another piece of our mystery artifact."},
 	{name: "label-1", class: "label", icon: "./img/label-icon.png", image: "./img/label-1.png", spread: 0, collectionText:"An artifact label!"},
 	{name: "label-2", class: "label", icon: "./img/label-icon.png", image: "./img/label-2.png", spread: 0, collectionText:"What does this label even belong with?"},
-	{name: "label-3", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"We'll need to match these labels with their artifacts later"},
+	{name: "label-3", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"We'll need to match these labels with their artifacts later."},
 	{name: "label-4", class: "label", icon: "./img/label-icon.png", image: "./img/label-4.png", spread: 0, collectionText:"Another stray label"},
 	{name: "label-5", class: "label", icon: "./img/label-icon.png", image: "./img/label-1.png", spread: 0, collectionText:"Who knew robbers made such a mess?"},
 	{name: "label-6", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"Another label for the display."},
@@ -120,8 +117,8 @@ var collectables = [
 	{name: "british-coin", class: "coin", icon: "./img/coin-icon.png", image: "./img/british-coin.png", spread: 3, collectionText:"Think you can buy an ice cream with that?"},
 	{name: "greek-vase", class: "vase", icon: "./img/greek-vase-icon.png", image: "./img/shield-1.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
 	{name: "viking-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."},
-	{name: "roman-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/roman-helmet-placeholder.png", spread: 3, collectionText:"Are we getting ready for battle?"},
-	{name: "torc", class: "a-torc", icon: "./img/torc-icon.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy!"},
+	{name: "roman-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/roman-helmet-placeholder.png", spread: 3, collectionText:"Sweet gladiator style."},
+	{name: "torc", class: "a-torc", icon: "./img/torc-icon.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy! Looks too big to be a bracelet though."},
 	{name: "bog-body", class: "bog", icon: "./img/bog-icon.png", image: "./img/bog.png", spread: 2, collectionText:"Somebody left behind a leather jacket with a head attached."}
 	
 ];
