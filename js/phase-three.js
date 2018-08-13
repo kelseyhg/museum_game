@@ -34,6 +34,8 @@ for (var i = 0; i < myObjects.length; i++) {
   $(myObjects[i].spot).droppable(
    { accept: myObjects[i].thing, drop:function(event,ui){
       returnCount ++;
+      var pingSound = document.getElementById("ping");
+      pingSound.play();
         if (returnCount === 3) {
           $("#dialog").text("I don't think all the items we collected belong in this display.");
         }
@@ -41,7 +43,7 @@ for (var i = 0; i < myObjects.length; i++) {
           $("#dialog").text("Pretty sure we haven't found that missing hoard yet!");
         }
          else if (returnCount === 6) {
-          $("#dialog").text("Don't worry about the shield and vase. Someone will take them back later!");
+          $("#dialog").text("Don't worry about the helmet and vase. Someone will take them back later!");
         }
        else if (returnCount === 7) {
         $("#dialog").text("It's okay to guess where the labels go, but the guidebook might have some helpful hints.");

@@ -29,6 +29,10 @@
 	width: 210px;
 }
 
+#torc-f {
+	width: 120px;
+
+}
 
 #greek-vase-f {
 	
@@ -208,6 +212,7 @@
 	position: absolute;
 	left: 450px;
 	top: 110px;
+	width: 120px;
 }
 
 #placed-shield {

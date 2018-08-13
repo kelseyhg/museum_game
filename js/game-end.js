@@ -37,6 +37,8 @@ function hunt(){
 
 function gameWin() {
 	$("#winLoseModal").modal("show");
+	var winSound = document.getElementById("winMusic");
+		winSound.play();
 	console.log("You've found it! The museum is saved");
 	restartGame();
 };

@@ -31,22 +31,20 @@
 	font-size: 20px;
 }
 
+#show-collected {
+	position: absolute;
+	top: 68%;
+	left: 23%;
+}
+
 #step-1 {
 	position: absolute;
-	top: 76%;
+	top: 80%;
 	left: 19%;
 
 }
 
 #step-2 {
-	position: absolute;
-	top: 80%;
-	left: 19%;
-	color: gray;
-
-}
-
-#step-3 {
 	position: absolute;
 	top: 84%;
 	left: 19%;
@@ -54,9 +52,17 @@
 
 }
 
-#step-4 {
+#step-3 {
 	position: absolute;
 	top: 88%;
+	left: 19%;
+	color: gray;
+
+}
+
+#step-4 {
+	position: absolute;
+	top: 92%;
 	left: 19%;
 	color: gray;
 
@@ -154,54 +160,57 @@
 	position: absolute;
 	top: 86%;
 	left: 90%;
-	
+	width: 88px;
 }
 
 #shield-2 {
 	position: absolute;
 	top: 76%;
 	left: 40%;
-	
+	width: 103px;
 }
 #shield-3 {
 	position: absolute;
-	top: 83%;
+	top: 79%;
 	left: 49%;
-	
+	width: 97px;
 }
 
 #shield-4 {
 	position: absolute;
 	top: 71%;
 	left: 49%;
-	
+	width: 110px;
+	transform: rotate(33deg);
 }
 
 #shield-5 {
 	position: absolute;
 	top: 10%;
 	left: 77%;
-	
+	width: 126px;
 }
 
 #shield-6 {
 	position: absolute;
 	top: 80%;
-	left: 11%;
-	
+	left: 8%;
+	transform: rotate(90deg);
+	width: 120px;
 }
 
 #shield-7 {
 	position: absolute;
 	top: 53%;
 	left: 34%;
+	width: 94px;
 }
 
 #shield-8 {
 	position: absolute;
-	top: 33%;
+	top: 36%;
 	left: 31%;
-	
+	width: 108px;
 }
 #greek-vase {
 	position: absolute;
@@ -230,19 +239,20 @@
 	position: absolute;
 	top: 3%;
 	left: 65%;
+	width: 120px;
 }
 
 #roman-helmet {
 	position: absolute;
 	top: 43%;
-	left: 16%;
+	left: 15%;
+	width: 135px;
 }
 
 #note {
 	position: absolute;
 	top: 55%;
 	left: 35%;
-
 }
 
 #guideButton {
@@ -260,7 +270,9 @@
   position: fixed; /*Needed because the carousel overrides the position property */
 }
 
-
+#collection-lightbox {
+	margin: 0 auto;
+}
 
 .d-block {
 	margin: 0 auto!important;

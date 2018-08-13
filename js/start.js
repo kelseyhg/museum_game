@@ -41,19 +41,24 @@ $('.celt').on('click', function(){
 //controls the object collection process
 $(".collectable").on("click", function(){
 	this.remove();
-	console.log(this.id);
+	var clickSound = document.getElementById("click");
+		clickSound.play();
 	collectableCount ++;
 	var obj = collectables.find((o, i) => {
     if (o.name === this.id) {
-    	console.log(collectables[i]);
     	$("#dialog").text(collectables[i].collectionText);
-		var seeBook= $('<input id="guideButton" type="button" value="see guidebook"/>');
+		var seeBook= $('<input id="guideButton" type="button" class="btn" value="see guidebook"/>');
 		$("#dialog").append(seeBook);
 		$("#guideButton").on("click", function(){
 			openBook(i);
 		})
-    	//var iconId = "#" + collectables[i].class;
-    }
+		if (collectables[i].class === "shield") {
+			$("#slide-0").attr("src", "./img/shield-pieces.png");
+		} else {
+			var collectedImage = collectables[i].image;
+			var imageSlide = ("#slide-" + i);
+   			$(imageSlide).attr("src", collectedImage);
+    }};
 
 	});
 
@@ -74,6 +79,8 @@ $(".collectable").on("click", function(){
 //collect post-it note
 $("#note").on("click", function(){
 	this.remove();
+	var clickSound = document.getElementById("click");
+		clickSound.play();
 	$("#modal-text").text("Looks like a note from the mastermind to his thief!");
 	$("#modal-title").text("Note Collected!");
 	var postIt = ("<img id=\"post-it\" src=\"./img/note.png\">");
@@ -99,27 +106,27 @@ function openBook(page){
 
 
 var collectables = [
-	{name: "shield-1", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-1.png", spread: 1, collectionText:"Looks like a piece of...something."},
-	{name: "shield-2", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-2.png", spread: 1, collectionText:"Shiny. is that bronze?"},
-	{name: "shield-3", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-3.png", spread: 1, collectionText:"We'll have to put this back together when we find all the pieces."},
-	{name: "shield-4", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-4.png", spread: 1, collectionText:"This does NOT belong here."},
-	{name: "shield-5", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-5.png", spread: 1, collectionText:"Don't cut yourself on those jagged edges!"},
-	{name: "shield-6", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-6.png", spread: 1, collectionText:"Okay, thief, we get it, you have no respect for history."},
-	{name: "shield-7", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-7.png", spread: 1, collectionText:"Our thief sure did some damage here."},
-	{name: "shield-8", class: "shield", icon: "./img/shield-icon.png", image: "./img/shield-8.png", spread: 1, collectionText:"Another piece of our mystery artifact."},
-	{name: "label-1", class: "label", icon: "./img/label-icon.png", image: "./img/label-1.png", spread: 0, collectionText:"An artifact label!"},
-	{name: "label-2", class: "label", icon: "./img/label-icon.png", image: "./img/label-2.png", spread: 0, collectionText:"What does this label even belong with?"},
-	{name: "label-3", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"We'll need to match these labels with their artifacts later."},
-	{name: "label-4", class: "label", icon: "./img/label-icon.png", image: "./img/label-4.png", spread: 0, collectionText:"Another stray label"},
-	{name: "label-5", class: "label", icon: "./img/label-icon.png", image: "./img/label-1.png", spread: 0, collectionText:"Who knew robbers made such a mess?"},
-	{name: "label-6", class: "label", icon: "./img/label-icon.png", image: "./img/label-3.png", spread: 0, collectionText:"Another label for the display."},
-	{name: "roman-coin", class: "coin", icon: "./img/coin-icon.png", image: "./img/roman-coin.png", spread: 3, collectionText:"Is that a Roman emperor?"},
-	{name: "british-coin", class: "coin", icon: "./img/coin-icon.png", image: "./img/british-coin.png", spread: 3, collectionText:"Think you can buy an ice cream with that?"},
-	{name: "greek-vase", class: "vase", icon: "./img/greek-vase-icon.png", image: "./img/shield-1.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
-	{name: "viking-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."},
-	{name: "roman-helmet", class: "helmet", icon: "./img/helmet-icon.png", image: "./img/roman-helmet-placeholder.png", spread: 3, collectionText:"Sweet gladiator style."},
-	{name: "torc", class: "a-torc", icon: "./img/torc-icon.png", image: "./img/torc.png", spread: 1, collectionText:"What a stunning gold alloy! Looks too big to be a bracelet though."},
-	{name: "bog-body", class: "bog", icon: "./img/bog-icon.png", image: "./img/bog.png", spread: 2, collectionText:"Somebody left behind a leather jacket with a head attached."}
+	{name: "shield-1", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"Looks like a piece of...something."},
+	{name: "torc", class: "a-torc", image: "./img/torc-whole.png", spread: 1, collectionText:"What a stunning gold alloy! Looks too big to be a bracelet though."},
+	{name: "label-1", class: "label", image: "./img/torc-label.png", spread: 0, collectionText:"An artifact label!"},
+	{name: "bog-body", class: "bog", image: "./img/bog.png", spread: 2, collectionText:"Somebody left behind a leather jacket with a head attached."},
+	{name: "label-3", class: "label", image: "./img/helmet-label.png", spread: 0, collectionText:"We'll need to match these labels with their artifacts later."},
+	{name: "label-4", class: "label", image: "./img/shield-label.png", spread: 0, collectionText:"Another stray label"},
+	{name: "roman-coin", class: "coin", image: "./img/roman-coin.png", spread: 3, collectionText:"Is that a Roman emperor?"},
+	{name: "label-2", class: "label", image: "./img/roman-coin-label.png", spread: 0, collectionText:"What does this label even belong with?"},
+	{name: "label-5", class: "label", image: "./img/bog-label.png", spread: 0, collectionText:"Who knew robbers made such a mess?"},
+	{name: "label-6", class: "label", image: "./img/british-coin-label.png", spread: 0, collectionText:"Another label for the display."},
+	{name: "british-coin", class: "coin", image: "./img/british-coin.png", spread: 3, collectionText:"Think you can buy an ice cream with that?"},
+	{name: "greek-vase", class: "vase", image: "./img/greek-vase.png", spread: 3, collectionText:"Looks Greek to me, but we'll pick it up anyway."},
+	{name: "viking-helmet", class: "helmet", image: "./img/waterloo-helmet.png", spread: 1, collectionText:"A helmet fit for a Viking."},
+	{name: "roman-helmet", class: "helmet", image: "./img/roman-helmet.png", spread: 3, collectionText:"Sweet gladiator style."},
+	{name: "shield-2", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"Shiny. is that bronze?"},
+	{name: "shield-3", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"We'll have to put this back together when we find all the pieces."},
+	{name: "shield-4", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"This does NOT belong here."},
+	{name: "shield-5", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"Don't cut yourself on those jagged edges!"},
+	{name: "shield-6", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"Okay, thief, we get it, you have no respect for history."},
+	{name: "shield-7", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"Our thief sure did some damage here."},
+	{name: "shield-8", class: "shield", image: "./img/shield-pieces.png", spread: 1, collectionText:"Another piece of our mystery artifact."}
 	
 ];
 

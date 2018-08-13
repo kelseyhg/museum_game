@@ -34,6 +34,8 @@ $(".puzzle-slots").droppable();
 for (var i = 0; i < shieldPieces.length; i++) {
   $(shieldPieces[i].slot).droppable(
    { accept: shieldPieces[i].piece, drop:function(event,ui){
+    var pingSound = document.getElementById("ping");
+    pingSound.play();
       puzzleCount ++;
       for (var j = 0; j < shieldPieces.length; j++) {
         var activeDiv = ("#" + this.id);
@@ -59,6 +61,7 @@ function checkCompletion() {
   $("#shield").attr("src", "./img/shield-whole-icon.png");
 	$("#step-2").css("color", "gray");
 	$("#step-3").css("color", "black");
+  $("#slide-0").attr("src", "./img/shield.png");
   $("#step-3").on("click", function(){
       partThree();
     });
