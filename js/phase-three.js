@@ -36,7 +36,9 @@ for (var i = 0; i < myObjects.length; i++) {
       returnCount ++;
       var pingSound = document.getElementById("ping");
       pingSound.play();
-        if (returnCount === 3) {
+        if (returnCount === 2) {
+            $("#dialog").text("Click the collected items button to see close-ups of your artifacts!");
+        } else if (returnCount === 3) {
           $("#dialog").text("I don't think all the items we collected belong in this display.");
         }
         else if (returnCount === 5) {
@@ -50,7 +52,6 @@ for (var i = 0; i < myObjects.length; i++) {
        }
       for (var j = 0; j < myObjects.length; j++) {
         if (("#" + this.id) ===  myObjects[j].spot) {
-          console.log("#" + this.id)
           $(myObjects[j].thing).remove();
           $(myObjects[j].placed).show();
           $(myObjects[j].icon).hide();

@@ -64,17 +64,57 @@
 	left: 275px;
 }
 
-#pieces-container {
-	position: absolute;
-	top: 50px;
-	left:500px;
 
+
+#puzzle-1 {
+	position: absolute;
+	top: 20px;
+	left: 750px;
 }
+
+#puzzle-2 {
+	position: absolute;
+	top: 260px;
+	left: 750px;
+}
+#puzzle-3 {
+	position: absolute;
+	top: 20px;
+	left: 500px;
+}
+#puzzle-4 {
+	position: absolute;
+	top: 385px;
+	left: 500px;
+}
+#puzzle-5 {
+	position: absolute;
+	top: 145px;
+	left: 500px;
+}
+#puzzle-6 {
+	position: absolute;
+	top: 145px;
+	left: 750px;
+}
+#puzzle-7 {
+	position: absolute;
+	top: 385px;
+	left: 750px;
+}
+#puzzle-8 {
+	position: absolute;
+	top: 260px;
+	left: 500px;
+}
+
 
 .draggable {
 	position: inline-block;
-	vertical-align: top;
+	vertical-align: bottom;
 }
+
+
 
 
 

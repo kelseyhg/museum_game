@@ -17,7 +17,6 @@ var guessCounter = 0;
 };
 
 function hunt(){
-	console.log("hunt is on");
 	console.log(guessCounter);
 	$("#hidden-hoard").click(function() {
 		gameWin();
@@ -39,7 +38,6 @@ function gameWin() {
 	$("#winLoseModal").modal("show");
 	var winSound = document.getElementById("winMusic");
 		winSound.play();
-	console.log("You've found it! The museum is saved");
 	restartGame();
 };
 
@@ -47,7 +45,6 @@ function gameLose() {
 	$("#end-modal-title").text("Too slow!");
 	$("#end-modal-text").text("The thieves have absconded with the hoard! It's a sad day for the museum.");
 	$("#winLoseModal").modal("show");
-	console.log("the hoard is gone and it's your fault.")
 	restartGame();
 }
 
