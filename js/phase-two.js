@@ -61,9 +61,9 @@ function checkCompletion() {
   $("#shield").attr("src", "./img/shield-whole-icon.png");
 	$("#step-2").css("color", "gray");
 	$("#step-3").css("color", "black");
-  $("#slide-0").attr("src", "./img/shield.png");
+  $("#slide-0").attr("src", "./img/shield-modal.png");
   $("#step-3").on("click", function(){
       partThree();
     });
-	//change icon from shield piece to full shield
+
 }}
